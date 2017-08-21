@@ -1,4 +1,4 @@
-const findIndex = (arr, predicate) => {
+const findLastIndex = (arr, predicate) => {
     let result
     let func
 
@@ -18,7 +18,7 @@ const findIndex = (arr, predicate) => {
         func = predicate
     }
 
-    for (let i = 0, l = arr.length; i < l; i++) {
+    for (let i = arr.length - 1; i >= 0; i--) {
         if (func(arr[i])) {
             return result = i
         }
