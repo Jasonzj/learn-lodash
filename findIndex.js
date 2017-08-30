@@ -1,6 +1,10 @@
 const findIndex = (arr, predicate) => {
-    let result
     let func
+    const len = arr == null ? 0 : arr.length
+
+    if (!len) {
+        return -1
+    }
 
     if (typeof predicate !== 'function') {
         func = (o) => {
@@ -18,14 +22,11 @@ const findIndex = (arr, predicate) => {
         func = predicate
     }
 
-    for (let i = 0, l = arr.length; i < l; i++) {
+    for (let i = 0, l = len; i < l; i++) {
         if (func(arr[i])) {
-            return result = i
+            return i
         }
     }
 
-    if (result) {
-        return result
-    }
     return -1
 }
