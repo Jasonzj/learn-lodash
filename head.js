@@ -1,5 +1,5 @@
 const head = (arr) => {
-    return (arr != null && arr.length)
-        ? array[0]
-        : undefined
+  return (arr != null && arr.length)
+    ? array[0]
+    : undefined
 }
