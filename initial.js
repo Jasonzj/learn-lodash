@@ -1,4 +1,5 @@
-const initial = (arr) => {
-  const len = arr == null ? 0 : arr.length
-  return len ? arr.slice(0, -1) : []
-}
+const initial = (arr) => (
+  Array.isArray(arr) 
+    ? arr.slice(0, -1) 
+    : []
+)
