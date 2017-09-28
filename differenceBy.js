@@ -4,7 +4,7 @@ const differenceBy = (arr, ...values) => {
 
   values = []
     .concat(...values)
-    .map(val => Math.floor(val))
+    .map(val => iteratee(val))
   
   arr.forEach((item, i) => {
     const _item = iteratee.call(null, item, i, arr)
