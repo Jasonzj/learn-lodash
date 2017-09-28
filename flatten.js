@@ -1,5 +1,5 @@
-const flatten = arr => {
-  return Array.isArray(arr)
+const flatten = arr => (
+  Array.isArray(arr)
     ? [].concat.apply([], arr)
     : []
-}
+)
