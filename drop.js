@@ -1,6 +1,5 @@
-const drop = (array, n = 1) => {    
-  const length = array == null ? 0 : array.length
-  return length 
-    ? array.slice(n < 0 ? 0 : n, length) 
+const drop = (arr, n = 1) => (
+  Array.isArray(arr)
+    ? arr.slice(n < 0 ? 0 : n, arr.length) 
     : []
-}
+)
