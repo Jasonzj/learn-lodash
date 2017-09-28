@@ -1,5 +1,5 @@
-const head = (arr) => {
-  return (arr != null && arr.length)
-    ? array[0]
+const head = (arr) => (
+  Array.isArray(arr)
+    ? arr[0]
     : undefined
-}
+)
