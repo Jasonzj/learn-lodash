@@ -1,22 +1,23 @@
 const differenceBy = (arr, ...values) => {
   const result = []
-  const iteratee = values.pop()
-  const isStr = typeof iteratee === 'string'
+  let iteratee = values.pop()
+  let func = iteratee
+
+  if (typeof iteratee !== 'function') {
+    func = (val) => {
+      if (typeof iteratee === 'string') {
+        return val[iteratee]
+      }
+    }
+  }
 
   values = []
     .concat(...values)
-    .map(val => {
-      if (isStr) return val[iteratee]
-      return iteratee(val)
-    })
+    .map(val => func(val))
 
   arr.forEach((item, i) => {
-    if (!isStr) {
-      const _item = iteratee.call(null, item, i, arr)
-    }
-    const _item = item[iteratee]
+    const _item = func.call(null, item, i, arr)
     const diff = values.includes(_item)
-
     if (!diff) result.push(item)
   })
 
